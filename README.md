@@ -1,17 +1,17 @@
 # 企業級庫存管理系統資料庫設計 (Inventory Management System)
 
-[cite_start]這是一個完整的後端資料庫開發專案，模擬企業內部的員工管理、供應商採購與產品訂單流程 [cite: 15][cite_start]。本專案展示了複雜的資料庫正規化設計，並透過多個自定義的 **Stored Procedures (預存程序)** 實作自動化業務邏輯 [cite: 15]。
+這是一個完整的後端資料庫開發專案，模擬企業內部的員工管理、供應商採購與產品訂單流程。本專案展示了複雜的資料庫正規化設計，並透過多個自定義的 **Stored Procedures (預存程序)** 實作自動化業務邏輯。
 
 ---
 
 ## 🛠 技術棧
-* [cite_start]**資料庫**: MySQL 8.0+ [cite: 15]
-* [cite_start]**建模工具**: MySQL Workbench [cite: 10]
+* **資料庫**: MySQL 8.0+ 
+* **建模工具**: MySQL Workbench 
 * **核心技術**:
-    * [cite_start]預存程序 (Stored Procedures) [cite: 15]
-    * [cite_start]遞迴查詢 (Recursive CTE) [cite: 15]
-    * [cite_start]事務管理 (Transaction Control) [cite: 15]
-    * [cite_start]雜湊加密與 Salt 機制 (Password Hashing & Salt) [cite: 15]
+    * 預存程序 (Stored Procedures)
+    * 遞迴查詢 (Recursive CTE)
+    * 事務管理 (Transaction Control)
+    * 雜湊加密與 Salt 機制 (Password Hashing & Salt)
 
 ---
 
@@ -33,36 +33,31 @@
 本專案整合了多項後端邏輯自動化，確保資料一致性與業務效率：
 
 ### 1. 庫存預警與自動化檢查 (`sp_CheckInventory`)
-[cite_start]當建立產品訂單時，系統會自動比對所需零件的現有庫存 [cite: 15][cite_start]。若預期庫存低於設定的 **Reorder Level**，系統會自動在 `Reorder_Alert_Log` 插入警示紀錄並回傳建議 [cite: 15]。
+當建立產品訂單時，系統會自動比對所需零件的現有庫存。若預期庫存低於設定的 **Reorder Level**，系統會自動在 `Reorder_Alert_Log` 插入警示紀錄並回傳建議。
 
 ### 2. 組織架構遞迴查詢 (`sp_ConfirmSupervisor`)
-[cite_start]使用 **Recursive CTE** 實作，可以從指定員工出發，向上追蹤其直屬及上層主管階層資訊 [cite: 15]。
+使用 **Recursive CTE** 實作，可以從指定員工出發，向上追蹤其直屬及上層主管階層資訊。
 
 ### 3. 安全身份驗證系統
-* [cite_start]**員工註冊 (`sp_RegisterEmployee`)**: 實作密碼雜湊與 Salt 儲存，確保使用者敏感資料的安全 [cite: 15]。
-* [cite_start]**登入驗證 (`sp_Login`)**: 透過驗證雜湊值進行身份確認，並回傳對應的狀態代碼 [cite: 15]。
+* **員工註冊 (`sp_RegisterEmployee`)**: 實作密碼雜湊與 Salt 儲存，確保使用者敏感資料的安全。
+* **登入驗證 (`sp_Login`)**: 透過驗證雜湊值進行身份確認，並回傳對應的狀態代碼。
 
 ### 4. 訂單狀態與流程控制 (`sp_UpdateOrderStatus`)
-[cite_start]實作狀態機邏輯，嚴格控管採購與產品訂單的狀態流轉（如：待處理 -> 運輸中 -> 已完成），防止非法操作 [cite: 15]。
+實作狀態機邏輯，嚴格控管採購與產品訂單的狀態流轉（如：待處理 -> 運輸中 -> 已完成），防止非法操作。
 
 ---
 
 ## 🚀 快速開始
 
-1. [cite_start]確保環境已安裝 **MySQL Server** [cite: 15]。
-2. 進入 `SQL_Scripts` 目錄，執行以下指令匯入專案：
+### 1. [cite_start]確保環境已安裝 **MySQL Server** [cite: 15]。
+### 2. 進入 `SQL_Scripts` 目錄，執行以下指令匯入專案：
 
 ```bash
 mysql -u your_username -p < db_inventory_system.sql
 ```
 
-3. 匯入後，即可透過 `CALL` 指令測試各項預存程序功能，例如：
+### 3. 匯入後，即可透過 `CALL` 指令測試各項預存程序功能，例如：
 
 ```sql
 CALL sp_CheckInventory(1);
 ```
-
-3. 匯入後，即可透過 `CALL` 指令測試各項預存程序功能，例如：
-
-```sql
-CALL sp_CheckInventory(1);
