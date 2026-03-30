@@ -16,6 +16,7 @@
 ---
 
 ## 📂 專案結構
+
 ```text
 /
 ├── README.md                # 專案說明文件
@@ -26,26 +27,35 @@
 
 ---
 
-## 🌟 技術亮點與實作功能本專案整合了多項後端邏輯自動化，確保資料一致性與業務效率：
+## 🌟 技術亮點與實作功能
 
-1. 庫存預警與自動化檢查 (sp_CheckInventory)
-當建立產品訂單時，系統會自動比對所需零件的現有庫存 。若預期庫存低於設定的 Reorder Level，系統會自動在 Reorder_Alert_Log 插入警示紀錄並回傳建議 。
+本專案整合了多項後端邏輯自動化，確保資料一致性與業務效率：
 
-2. 組織架構遞迴查詢 (sp_ConfirmSupervisor)
-使用 Recursive CTE 實作，可以從指定員工出發，向上追蹤其直屬及上層主管階層資訊 。
+### 1. 庫存預警與自動化檢查 (`sp_CheckInventory`)
+[cite_start]當建立產品訂單時，系統會自動比對所需零件的現有庫存 [cite: 15][cite_start]。若預期庫存低於設定的 **Reorder Level**，系統會自動在 `Reorder_Alert_Log` 插入警示紀錄並回傳建議 [cite: 15]。
 
-3. 安全身份驗證系統
-    員工註冊 (sp_RegisterEmployee): 實作密碼雜湊與 Salt 儲存，確保使用者敏感資料的安全 。
-    登入驗證 (sp_Login): 透過驗證雜湊值進行身份確認，並回傳對應的狀態代碼 。
+### 2. 組織架構遞迴查詢 (`sp_ConfirmSupervisor`)
+[cite_start]使用 **Recursive CTE** 實作，可以從指定員工出發，向上追蹤其直屬及上層主管階層資訊 [cite: 15]。
 
-4. 訂單狀態與流程控制 (sp_UpdateOrderStatus)
-實作狀態機邏輯，嚴格控管採購與產品訂單的狀態流轉（如：待處理 -> 運輸中 -> 已完成），防止非法操作 。
+### 3. 安全身份驗證系統
+* [cite_start]**員工註冊 (`sp_RegisterEmployee`)**: 實作密碼雜湊與 Salt 儲存，確保使用者敏感資料的安全 [cite: 15]。
+* [cite_start]**登入驗證 (`sp_Login`)**: 透過驗證雜湊值進行身份確認，並回傳對應的狀態代碼 [cite: 15]。
+
+### 4. 訂單狀態與流程控制 (`sp_UpdateOrderStatus`)
+[cite_start]實作狀態機邏輯，嚴格控管採購與產品訂單的狀態流轉（如：待處理 -> 運輸中 -> 已完成），防止非法操作 [cite: 15]。
 
 ---
 
 ## 🚀 快速開始
-1. 確保環境已安裝 MySQL Server。
-2. 進入 SQL_Scripts 目錄，執行以下指令匯入專案：
-    Bashmysql -u your_username -p < db_inventory_system.sql
-3. 匯入後，即可透過 CALL 指令測試各項預存程序功能，例如：
-    SQLCALL sp_CheckInventory(1);
+
+1. [cite_start]確保環境已安裝 **MySQL Server** [cite: 15]。
+2. 進入 `SQL_Scripts` 目錄，執行以下指令匯入專案：
+
+```bash
+mysql -u your_username -p < db_inventory_system.sql
+```
+
+3. 匯入後，即可透過 `CALL` 指令測試各項預存程序功能，例如：
+
+```sql
+CALL sp_CheckInventory(1);
