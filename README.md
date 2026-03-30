@@ -24,6 +24,8 @@
 └── SQL_Scripts/
     └── db_inventory_system.sql    # 包含 DDL、測試資料及預存程序
 
+---
+
 ## 🌟 技術亮點與實作功能本專案整合了多項後端邏輯自動化，確保資料一致性與業務效率：
 
 1. 庫存預警與自動化檢查 (sp_CheckInventory)
