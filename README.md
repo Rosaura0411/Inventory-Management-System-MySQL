@@ -49,14 +49,14 @@
 
 ## 🚀 快速開始
 
-### 1. [cite_start]確保環境已安裝 **MySQL Server** [cite: 15]。
-### 2. 進入 `SQL_Scripts` 目錄，執行以下指令匯入專案：
+1. [cite_start]確保環境已安裝 **MySQL Server** [cite: 15]。
+2. 進入 `SQL_Scripts` 目錄，執行以下指令匯入專案：
 
 ```bash
 mysql -u your_username -p < db_inventory_system.sql
 ```
 
-### 3. 匯入後，即可透過 `CALL` 指令測試各項預存程序功能，例如：
+3. 匯入後，即可透過 `CALL` 指令測試各項預存程序功能，例如：
 
 ```sql
 CALL sp_CheckInventory(1);
