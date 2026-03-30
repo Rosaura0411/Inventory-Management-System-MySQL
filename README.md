@@ -21,9 +21,9 @@
 /
 ├── README.md                # 專案說明文件
 ├── Database_Model/
-[cite_start]│   └── db_inventory_system.mwb    # 視覺化 EER 模型檔 [cite: 10]
+│   └── db_inventory_system.mwb    # 視覺化 EER 模型檔
 └── SQL_Scripts/
-    [cite_start]└── db_inventory_system.sql    # 包含 DDL、測試資料及預存程序 [cite: 15]
+    └── db_inventory_system.sql    # 包含 DDL、測試資料及預存程序
 ```
 
 ---
