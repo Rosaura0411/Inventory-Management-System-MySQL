@@ -1,4 +1,4 @@
-# 企業級庫存管理系統資料庫設計 (Inventory Management System)
+# IoT庫存管理系統資料庫設計 (Inventory Management System)
 
 這是一個完整的後端資料庫開發專案，模擬企業內部的員工管理、供應商採購與產品訂單流程。本專案展示了複雜的資料庫正規化設計，並透過多個自定義的 **Stored Procedures (預存程序)** 實作自動化業務邏輯。
 
