@@ -4,7 +4,7 @@
 
 ---
 
-## 🛠 技術
+## 🛠 Tech Stack
 * **資料庫**: MySQL 8.0+ 
 * **建模工具**: MySQL Workbench 
 * **核心技術**:
