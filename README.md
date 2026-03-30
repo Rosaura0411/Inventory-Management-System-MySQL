@@ -41,7 +41,9 @@
 4. 訂單狀態與流程控制 (sp_UpdateOrderStatus)
 實作狀態機邏輯，嚴格控管採購與產品訂單的狀態流轉（如：待處理 -> 運輸中 -> 已完成），防止非法操作 。
 
-🚀 快速開始
+---
+
+## 🚀 快速開始
 1. 確保環境已安裝 MySQL Server。
 2. 進入 SQL_Scripts 目錄，執行以下指令匯入專案：
     Bashmysql -u your_username -p < db_inventory_system.sql
