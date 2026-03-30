@@ -1,12 +1,12 @@
 # 企業級庫存管理系統資料庫設計 (Inventory Management System)
 
-[cite_start]這是一個完整的後端資料庫開發專案，模擬企業內部的員工管理、供應商採購與產品訂單流程 [cite: 15]。本專案展示了複雜的資料庫正規化設計，並透過多個自定義的 **Stored Procedures (預存程序)** 實作自動化業務邏輯。
+這是一個完整的後端資料庫開發專案，模擬企業內部的員工管理、供應商採購與產品訂單流程 [cite: 15]。本專案展示了複雜的資料庫正規化設計，並透過多個自定義的 **Stored Procedures (預存程序)** 實作自動化業務邏輯。
 
 ---
 
 ## 🛠 技術棧
-* [cite_start]**資料庫**: MySQL 8.0+ [cite: 15]
-* [cite_start]**建模工具**: MySQL Workbench [cite: 15]
+* **資料庫**: MySQL 8.0+ [cite: 15]
+* **建模工具**: MySQL Workbench [cite: 15]
 * **核心技術**:
     * 預存程序 (Stored Procedures)
     * 遞迴查詢 (Recursive CTE)
@@ -24,7 +24,7 @@
 └── SQL_Scripts/
     └── db_inventory_system.sql    # 包含 DDL、測試資料及預存程序
 
-🌟 技術亮點與實作功能本專案整合了多項後端邏輯自動化，確保資料一致性與業務效率：
+## 🌟 技術亮點與實作功能本專案整合了多項後端邏輯自動化，確保資料一致性與業務效率：
 
 1. 庫存預警與自動化檢查 (sp_CheckInventory)
 當建立產品訂單時，系統會自動比對所需零件的現有庫存 。若預期庫存低於設定的 Reorder Level，系統會自動在 Reorder_Alert_Log 插入警示紀錄並回傳建議 。
