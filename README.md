@@ -49,7 +49,7 @@
 
 ## 🚀 快速開始
 
-1. [cite_start]確保環境已安裝 **MySQL Server** [cite: 15]。
+1. 確保環境已安裝 **MySQL Server**。
 2. 進入 `SQL_Scripts` 目錄，執行以下指令匯入專案：
 
 ```bash
