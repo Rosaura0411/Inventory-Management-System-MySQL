@@ -1,17 +1,17 @@
 # 企業級庫存管理系統資料庫設計 (Inventory Management System)
 
-[cite_start]這是一個完整的後端資料庫開發專案，模擬企業內部的員工管理、供應商採購與產品訂單流程 [cite: 15][cite_start]。本專案展示了複雜的資料庫正規化設計，並透過多個自定義的 **Stored Procedures (預存程序)** 實作自動化業務邏輯 。
+[cite_start]這是一個完整的後端資料庫開發專案，模擬企業內部的員工管理、供應商採購與產品訂單流程 [cite: 15]。本專案展示了複雜的資料庫正規化設計，並透過多個自定義的 **Stored Procedures (預存程序)** 實作自動化業務邏輯。
 
 ---
 
 ## 🛠 技術棧
-* [cite_start]**資料庫**: MySQL 8.0+ 
-* [cite_start]**建模工具**: MySQL Workbench 
+* [cite_start]**資料庫**: MySQL 8.0+ [cite: 15]
+* [cite_start]**建模工具**: MySQL Workbench [cite: 15]
 * **核心技術**:
-    * [cite_start]預存程序 (Stored Procedures) 
-    * [cite_start]遞迴查詢 (Recursive CTE) 
-    * [cite_start]事務管理 (Transaction Control) 
-    * [cite_start]雜湊加密與 Salt 機制 (Password Hashing & Salt) 
+    * 預存程序 (Stored Procedures)
+    * 遞迴查詢 (Recursive CTE)
+    * 事務管理 (Transaction Control)
+    * 雜湊加密與 Salt 機制 (Password Hashing & Salt)
 
 ---
 
@@ -20,7 +20,7 @@
 /
 ├── README.md                # 專案說明文件
 ├── Database_Model/
-│   └── db_inventory_system.mwb    # 視覺化 EER 模型檔 [cite: 10]
+[cite_start]│   └── db_inventory_system.mwb    # 視覺化 EER 模型檔 [cite: 10]
 └── SQL_Scripts/
     └── db_inventory_system.sql    # 包含 DDL、測試資料及預存程序
 
